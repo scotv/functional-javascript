@@ -1,0 +1,337 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
+        
+        <meta charset="UTF-8">
+        <title>Functor | Functional JavaScript</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="jcouyang">
+        <meta name="description" content="[![Build Status](https://www.gitbook.io/button/status/book/jcouyang/functional-javascript)](https://www.gitbook.io/book/jcouyang/functional-javascript/activity)">
+        <meta name="keywords" content="gitbook,github" >
+        <meta name="generator" content="www.gitbook.io">
+
+        
+        
+        <link rel="prev" href="../functor_&amp;_monad/README.html" />
+        
+
+        <meta property="og:title" content="Functor | Functional JavaScript">
+        <meta property="og:site_name" content="Functional JavaScript">
+        <meta property="og:type" content="book">
+        <meta property="og:locale" content="en_US">
+
+        <meta property="book:author" content="https://github.com/jcouyang">
+        <meta property="book:tag" content="GitBook">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    </head>
+    <body>
+        
+        <link rel="stylesheet" href="../gitbook/style.css">
+        
+        
+    <div class="book" data-github="jcouyang/function-javascript" data-level="4.1" data-basepath=".." data-revision="1405174086479">
+    <div class="book-header">
+    <!-- Actions Left -->
+    
+    <a href="https://github.com/jcouyang/function-javascript" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
+    
+    <a href="#" class="btn pull-left toggle-summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search"><i class="fa fa-search"></i></a>
+
+    <!-- Actions Right -->
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="google-plus"><i class="fa fa-google-plus"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="facebook"><i class="fa fa-facebook"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="twitter"><i class="fa fa-twitter"></i></a>
+
+    
+    <a href="https://github.com/jcouyang/function-javascript/stargazers" target="_blank" class="btn pull-right count-star"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
+    <a href="https://github.com/jcouyang/function-javascript/watchers" target="_blank" class="btn pull-right count-watch"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
+    
+
+    <!-- Title -->
+    <h1><a href="../" >Functional JavaScript</a></h1>
+</div>
+
+    <div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        <li>
+            <a href="https://github.com/jcouyang" target="blank">About the author</a>
+        </li>
+        <li>
+            <a href="https://github.com/jcouyang/function-javascript/issues" target="blank">Questions and Issues</a>
+        </li>
+        <li>
+            <a href="https://github.com/jcouyang/function-javascript/edit/master/functor_&amp;_monad/functor.md" target="blank">Edit and Contribute</a>
+        </li>
+        <li class="divider"></li>
+        
+        <li data-level="0" data-path="index.html">
+            <a href="../"><i class="fa fa-check"></i> Introduction</a>
+        </li>
+        
+            <li  data-level="1" data-path="lambda/README.html">
+                
+                <a href="../lambda/README.html">
+                    <i class="fa fa-check"></i> <b>1.</b> lambda
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="1.1" data-path="lambda/anonymous_function.html">
+                            
+                            <a href="../lambda/anonymous_function.html">
+                                <i class="fa fa-check"></i> <b>1.1.</b> 匿名函数(anonymous function)
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.2" data-path="lambda/arrow_function.html">
+                            
+                            <a href="../lambda/arrow_function.html">
+                                <i class="fa fa-check"></i> <b>1.2.</b> 箭头函数(arrow function)
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="2" data-path="higher_order_function/README.html">
+                
+                <a href="../higher_order_function/README.html">
+                    <i class="fa fa-check"></i> <b>2.</b> 高阶函数(Higher-order function)
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="2.1" data-path="higher_order_function/high-order_function.html">
+                            
+                            <a href="../higher_order_function/high-order_function.html">
+                                <i class="fa fa-check"></i> <b>2.1.</b> high-order function
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.2" data-path="higher_order_function/map_reduce.html">
+                            
+                            <a href="../higher_order_function/map_reduce.html">
+                                <i class="fa fa-check"></i> <b>2.2.</b> map reduce filter
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.3" data-path="higher_order_function/currying.html">
+                            
+                            <a href="../higher_order_function/currying.html">
+                                <i class="fa fa-check"></i> <b>2.3.</b> 柯里化 currying
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.4" data-path="higher_order_function/compose_function.html">
+                            
+                            <a href="../higher_order_function/compose_function.html">
+                                <i class="fa fa-check"></i> <b>2.4.</b> 函数组合 compose function
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="3" data-path="pattern_matching/README.html">
+                
+                <a href="../pattern_matching/README.html">
+                    <i class="fa fa-check"></i> <b>3.</b> 模式匹配(Pattern Matching)
+                </a>
+                
+                
+            </li>
+        
+            <li  data-level="4" data-path="functor_&amp;_monad/README.html">
+                
+                <a href="../functor_&amp;_monad/README.html">
+                    <i class="fa fa-check"></i> <b>4.</b> Functor &amp; Monad
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="4.1" data-path="functor_&amp;_monad/functor.html">
+                            
+                            <a href="../functor_&amp;_monad/functor.html">
+                                <i class="fa fa-check"></i> <b>4.1.</b> Functor
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="page-wrapper" tabindex="-1">
+                <div class="book-progress">
+    <div class="bar">
+        <div class="inner" style="width: 100%;min-width: 90.9090909090909%;"></div>
+    </div>
+    <div class="chapters">
+    
+        <a href="../index.html" title="Introduction" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
+    
+        <a href="../lambda/README.html" title="lambda" class="chapter done new-chapter" data-progress="1" style="left: 9.090909090909092%;"></a>
+    
+        <a href="../lambda/anonymous_function.html" title="匿名函数(anonymous function)" class="chapter done " data-progress="1.1" style="left: 18.181818181818183%;"></a>
+    
+        <a href="../lambda/arrow_function.html" title="箭头函数(arrow function)" class="chapter done " data-progress="1.2" style="left: 27.272727272727273%;"></a>
+    
+        <a href="../higher_order_function/README.html" title="高阶函数(Higher-order function)" class="chapter done new-chapter" data-progress="2" style="left: 36.36363636363637%;"></a>
+    
+        <a href="../higher_order_function/high-order_function.html" title="high-order function" class="chapter done " data-progress="2.1" style="left: 45.45454545454545%;"></a>
+    
+        <a href="../higher_order_function/map_reduce.html" title="map reduce filter" class="chapter done " data-progress="2.2" style="left: 54.54545454545455%;"></a>
+    
+        <a href="../higher_order_function/currying.html" title="柯里化 currying" class="chapter done " data-progress="2.3" style="left: 63.63636363636363%;"></a>
+    
+        <a href="../higher_order_function/compose_function.html" title="函数组合 compose function" class="chapter done " data-progress="2.4" style="left: 72.72727272727273%;"></a>
+    
+        <a href="../pattern_matching/README.html" title="模式匹配(Pattern Matching)" class="chapter done new-chapter" data-progress="3" style="left: 81.81818181818181%;"></a>
+    
+        <a href="../functor_&amp;_monad/README.html" title="Functor &amp; Monad" class="chapter done new-chapter" data-progress="4" style="left: 90.9090909090909%;"></a>
+    
+        <a href="../functor_&amp;_monad/functor.html" title="Functor" class="chapter done " data-progress="4.1" style="left: 100%;"></a>
+    
+    </div>
+</div>
+
+                <div class="page-inner">
+                
+                    <section class="normal" id="section-gitbook_3">
+                    
+                        <h1 id="functor">Functor</h1>
+<h3 id="functor">Functor</h3>
+<p>Functor 是 可以被 map over 的类型. 什么叫 map over...</p>
+<p>比如 list 就可以说是可以被map over... 那么是不是可枚举类型?</p>
+<p>不是的, 来看看 Haskell 中如何解释(其实所有函数式的概念可能用 haskell 是最能说明问题的了).</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span> &gt; :t fmap
+<span class="hljs-title">fmap</span> :: (a -&gt; b) -&gt; fa -&gt; f b
+</code></pre>
+<p><code>fmap</code> 又是什么东西, fmap 是 map over Functor 的函数. 这个函数只干一个事情, 可能通过前面解释的一点点 Haskell功夫,你可能能翻译<code>(a -&gt; b) -&gt; fa -&gt; f b</code>了把. 给定一个从<code>a</code> 到<code>b</code> 的映射函数, 再给定一个 a 的 Functor, 返回一个 b 的 Functor.</p>
+<p>虽然个个字都认识, 但怎么就不知道啥意思.</p>
+<p>如果我再说一个新词, 你是不是会疯掉了-- Lift.</p>
+<p>好吧, 把他们都串起来, 你就明白了.</p>
+<ol>
+<li>平常我们可以把<code>a</code>到<code>b</code> 的映射可以叫做 map, 映射的方式就是函数了.</li>
+<li>那么类似的对于函数或者其他可以做这种 map 操作的类型或一种计算方式, 叫做 Functor.</li>
+<li>而这种 map 就叫做 fmap, 给定 a 集合到 b 集合的映射方式(也就是一个函数), 就能找到 对 a 的一种计算(computation, 任何可变换的类型, 这就是 Functor) 的变换 -- 对 b 的对应计算方式.</li>
+<li>如果该计算是一个函数, 那么这个操作叫做 lifting. 非常形象的, 根据 a 到 b 的映射 lift(举) 到另一个层面上.</li>
+</ol>
+<p><img src="http://learnyouahaskell-zh-tw.csie.org/img/lifter.png" alt=""></p>
+<p>虽然 lifting 很形象, 但是还是越说越抽象了, 来举个栗子.</p>
+<h3 id="-">举个栗子🌰</h3>
+<blockquote>
+<p><strong>note</strong> 注意我们还没有实现 Functor, 因此下面的栗子还不能运行在你的 console.</p>
+</blockquote>
+<p>前面说了, Functor 可以是数组, 因为数组可以被 map over</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> plus1 = n =&gt; n+<span class="hljs-number">1</span>;
+fmap(plus1, [<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>, <span class="hljs-number">8</span>])<span class="hljs-comment">// =&gt; [3,5,7,9]</span>
+</code></pre>
+<p>这里,数组 Array 就是 Functor 类型, 而 fmap 把 2 -&gt; 3 的映射方式对 Array [2,4,6,8] 进行了变换, 得到 [3,5,7,9]. 这跟数组的 map 方法一样, 比较好理解.</p>
+<p>再试试换一种 Functor 类型, 试试函数</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> times2 = m =&gt; m*<span class="hljs-number">2</span>;
+fmap(plus1, times2) <span class="hljs-comment">// =&gt; function(){}</span>
+fmap(plus1, times2)(<span class="hljs-number">3</span>) <span class="hljs-comment">// =&gt; 7 (3*2+1)</span>
+</code></pre>
+<p>看到 fmap 返回的是一个函数, 因为你 map over 的是一个函数<code>times2</code>. 还记得 <code>(a -&gt; b) -&gt; fa -&gt; f b</code>的公式么, 因为现在的 Functor 为 Function 类型, 函数类型可以理解为<code>x-&gt;</code>, 因此我们可以将该公式替换为</p>
+<pre><code>(a -&gt; b) -&gt; (x -&gt; a) -&gt; (x -&gt; b)
+</code></pre><p>再用我们具体的函数 plus1 替换进去</p>
+<pre><code>(n-&gt;n+1) -&gt; (x-&gt;n) -&gt; (x -&gt; n+1)
+</code></pre><p>也就是说, times2 吃 x 返回任何 n的话, 该 fmap lift 出来的函数会返回 n+1.</p>
+<p>这不就是函数组合吗 <code>plus1(times2(3))</code>, 确实是的. 但这只是 Functor 的冰山一角, dan在来看看别的Functor</p>
+<p>Functor 还可以是别的东西...比如</p>
+<pre><code>fmap(plus1, Either(10, 20))
+</code></pre><p>Either也是 Functor, 慢着, Either 是什么类型, 好吧,在解释 Either 之前, 我们先忍一忍, 来先看看 JavaScript 中怎么实现以及使用一个 Functor.</p>
+<h3 id="functor-in-javascript">Functor in JavaScript</h3>
+<p>首先, 我们用定义一个确定 Functor 类型的函数, 如果没有注册的类型抛出异常.</p>
+<pre><code class="lang-js"> <span class="hljs-keyword">var</span> types = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(obj)</span> {</span>
+<span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">TypeError</span>(<span class="hljs-string">"fmap called on unregistered type: "</span> + obj);
+};
+</code></pre>
+<p>然后实现注册 Functor 的函数.</p>
+<pre><code class="lang-js"> Functor = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(type, defs)</span> {</span>
+        <span class="hljs-keyword">var</span> oldTypes = types;
+        types = (obj) =&gt; {
+            <span class="hljs-keyword">if</span> (type.prototype.isPrototypeOf(obj)) {
+                <span class="hljs-keyword">return</span> defs; <span class="hljs-comment">// 这是递归的出口, 判断类型, 确定 fmap 的 Functor 实例属于注册的哪一个 Functor</span>
+            }
+            <span class="hljs-keyword">return</span> oldTypes(obj); <span class="hljs-comment">//不断递归寻找 types, 这个效率会很低, 因为调用栈上好多闭包, 每个闭包都保持着 type 和 defs</span>
+        }
+};
+</code></pre>
+<p>这样可以用 Functor 函数注册一个新的 Functor 类型并定义它自己的 fmap 方法(还记得前面说的 Functor 只有一个方法吗). 比如我们要把 Array 变成 Functor</p>
+<pre><code class="lang-js">Functor(<span class="hljs-built_in">Array</span>, {
+    fmap: (fn, array) =&gt; {
+        arr.map(x =&gt; fn(x))
+    }
+})
+</code></pre>
+<p>好像快要完成的样子. 现在还差 fmap Functor 类型函数了. 这个函数干两件事情, 找到实例属于哪个 Functor 类型, 并调用他的 fmap 方法.</p>
+<pre><code class="lang-js">fmap = eweda.curry((fn, obj) =&gt; {
+    <span class="hljs-keyword">return</span> types(obj).fmap(f, obj)
+})
+</code></pre>
+<p>同样的, 我们很快可以把 Function 也变成 Functor</p>
+<pre><code class="lang-js">Functor(<span class="hljs-built_in">Function</span>, {
+    fmap: (f, g) =&gt; {
+        <span class="hljs-keyword">return</span> eweda.compose(f, g);
+}})
+</code></pre>
+<p>还记得前面说 fmap 函数像函数组合吗, 呵呵, 我们这里就按函数组合实现.</p>
+<p>好吧, 通过如何实现和使用一个简单的 Functor, 概念上已经估计可以理解了, 我们回过头来看看 Either 是神马玩意.</p>
+<p><a class="jsbin-embed" href="http://jsbin.com/xezun/1/embed?js,console">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script></p>
+
+                    
+                    </section>
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../functor_&amp;_monad/README.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
+        
+        
+    </div>
+</div>
+
+        
+        <script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
+for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f)}})(document,window.mixpanel||[]);
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/mode-javascript.js"></script>
+        <script src="../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        <script src="../gitbook/app.js"></script>
+        
+    </body>
+</html>

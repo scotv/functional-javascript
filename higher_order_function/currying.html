@@ -1,0 +1,367 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
+        
+        <meta charset="UTF-8">
+        <title>柯里化 currying | Functional JavaScript</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="jcouyang">
+        <meta name="description" content="[![Build Status](https://www.gitbook.io/button/status/book/jcouyang/functional-javascript)](https://www.gitbook.io/book/jcouyang/functional-javascript/activity)">
+        <meta name="keywords" content="gitbook,github" >
+        <meta name="generator" content="www.gitbook.io">
+
+        
+        <link rel="next" href="../higher_order_function/compose_function.html" />
+        
+        
+        <link rel="prev" href="../higher_order_function/map_reduce.html" />
+        
+
+        <meta property="og:title" content="柯里化 currying | Functional JavaScript">
+        <meta property="og:site_name" content="Functional JavaScript">
+        <meta property="og:type" content="book">
+        <meta property="og:locale" content="en_US">
+
+        <meta property="book:author" content="https://github.com/jcouyang">
+        <meta property="book:tag" content="GitBook">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    </head>
+    <body>
+        
+        <link rel="stylesheet" href="../gitbook/style.css">
+        
+        
+    <div class="book" data-github="jcouyang/function-javascript" data-level="2.3" data-basepath=".." data-revision="1405174086479">
+    <div class="book-header">
+    <!-- Actions Left -->
+    
+    <a href="https://github.com/jcouyang/function-javascript" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
+    
+    <a href="#" class="btn pull-left toggle-summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search"><i class="fa fa-search"></i></a>
+
+    <!-- Actions Right -->
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="google-plus"><i class="fa fa-google-plus"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="facebook"><i class="fa fa-facebook"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="twitter"><i class="fa fa-twitter"></i></a>
+
+    
+    <a href="https://github.com/jcouyang/function-javascript/stargazers" target="_blank" class="btn pull-right count-star"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
+    <a href="https://github.com/jcouyang/function-javascript/watchers" target="_blank" class="btn pull-right count-watch"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
+    
+
+    <!-- Title -->
+    <h1><a href="../" >Functional JavaScript</a></h1>
+</div>
+
+    <div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        <li>
+            <a href="https://github.com/jcouyang" target="blank">About the author</a>
+        </li>
+        <li>
+            <a href="https://github.com/jcouyang/function-javascript/issues" target="blank">Questions and Issues</a>
+        </li>
+        <li>
+            <a href="https://github.com/jcouyang/function-javascript/edit/master/higher_order_function/currying.md" target="blank">Edit and Contribute</a>
+        </li>
+        <li class="divider"></li>
+        
+        <li data-level="0" data-path="index.html">
+            <a href="../"><i class="fa fa-check"></i> Introduction</a>
+        </li>
+        
+            <li  data-level="1" data-path="lambda/README.html">
+                
+                <a href="../lambda/README.html">
+                    <i class="fa fa-check"></i> <b>1.</b> lambda
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="1.1" data-path="lambda/anonymous_function.html">
+                            
+                            <a href="../lambda/anonymous_function.html">
+                                <i class="fa fa-check"></i> <b>1.1.</b> 匿名函数(anonymous function)
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.2" data-path="lambda/arrow_function.html">
+                            
+                            <a href="../lambda/arrow_function.html">
+                                <i class="fa fa-check"></i> <b>1.2.</b> 箭头函数(arrow function)
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="2" data-path="higher_order_function/README.html">
+                
+                <a href="../higher_order_function/README.html">
+                    <i class="fa fa-check"></i> <b>2.</b> 高阶函数(Higher-order function)
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="2.1" data-path="higher_order_function/high-order_function.html">
+                            
+                            <a href="../higher_order_function/high-order_function.html">
+                                <i class="fa fa-check"></i> <b>2.1.</b> high-order function
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.2" data-path="higher_order_function/map_reduce.html">
+                            
+                            <a href="../higher_order_function/map_reduce.html">
+                                <i class="fa fa-check"></i> <b>2.2.</b> map reduce filter
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.3" data-path="higher_order_function/currying.html">
+                            
+                            <a href="../higher_order_function/currying.html">
+                                <i class="fa fa-check"></i> <b>2.3.</b> 柯里化 currying
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.4" data-path="higher_order_function/compose_function.html">
+                            
+                            <a href="../higher_order_function/compose_function.html">
+                                <i class="fa fa-check"></i> <b>2.4.</b> 函数组合 compose function
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="3" data-path="pattern_matching/README.html">
+                
+                <a href="../pattern_matching/README.html">
+                    <i class="fa fa-check"></i> <b>3.</b> 模式匹配(Pattern Matching)
+                </a>
+                
+                
+            </li>
+        
+            <li  data-level="4" data-path="functor_&amp;_monad/README.html">
+                
+                <a href="../functor_&amp;_monad/README.html">
+                    <i class="fa fa-check"></i> <b>4.</b> Functor &amp; Monad
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="4.1" data-path="functor_&amp;_monad/functor.html">
+                            
+                            <a href="../functor_&amp;_monad/functor.html">
+                                <i class="fa fa-check"></i> <b>4.1.</b> Functor
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="page-wrapper" tabindex="-1">
+                <div class="book-progress">
+    <div class="bar">
+        <div class="inner" style="width: 63.63636363636363%;min-width: 54.54545454545455%;"></div>
+    </div>
+    <div class="chapters">
+    
+        <a href="../index.html" title="Introduction" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
+    
+        <a href="../lambda/README.html" title="lambda" class="chapter done new-chapter" data-progress="1" style="left: 9.090909090909092%;"></a>
+    
+        <a href="../lambda/anonymous_function.html" title="匿名函数(anonymous function)" class="chapter done " data-progress="1.1" style="left: 18.181818181818183%;"></a>
+    
+        <a href="../lambda/arrow_function.html" title="箭头函数(arrow function)" class="chapter done " data-progress="1.2" style="left: 27.272727272727273%;"></a>
+    
+        <a href="../higher_order_function/README.html" title="高阶函数(Higher-order function)" class="chapter done new-chapter" data-progress="2" style="left: 36.36363636363637%;"></a>
+    
+        <a href="../higher_order_function/high-order_function.html" title="high-order function" class="chapter done " data-progress="2.1" style="left: 45.45454545454545%;"></a>
+    
+        <a href="../higher_order_function/map_reduce.html" title="map reduce filter" class="chapter done " data-progress="2.2" style="left: 54.54545454545455%;"></a>
+    
+        <a href="../higher_order_function/currying.html" title="柯里化 currying" class="chapter done " data-progress="2.3" style="left: 63.63636363636363%;"></a>
+    
+        <a href="../higher_order_function/compose_function.html" title="函数组合 compose function" class="chapter  " data-progress="2.4" style="left: 72.72727272727273%;"></a>
+    
+        <a href="../pattern_matching/README.html" title="模式匹配(Pattern Matching)" class="chapter  new-chapter" data-progress="3" style="left: 81.81818181818181%;"></a>
+    
+        <a href="../functor_&amp;_monad/README.html" title="Functor &amp; Monad" class="chapter  new-chapter" data-progress="4" style="left: 90.9090909090909%;"></a>
+    
+        <a href="../functor_&amp;_monad/functor.html" title="Functor" class="chapter  " data-progress="4.1" style="left: 100%;"></a>
+    
+    </div>
+</div>
+
+                <div class="page-inner">
+                
+                    <section class="normal" id="section-gitbook_6">
+                    
+                        <h1 id="-currying">柯里化 currying</h1>
+<h2 id="-">为什么要柯里化</h2>
+<p>还记得 Haskell Curry吗<img src="http://s3.amazonaws.com/lyah/curry.png" alt=""></p>
+<p>多巧啊, 人家姓 Curry 名 Haskell, 难怪 Haskell 语言会自动柯里化, 呵呵. 但是不奇怪吗, 为什么要柯里化呢. 为什么如此重要导致 Haskell 会默认自动柯里化所有函数, 不就是返回一个部分配置好的函数吗.</p>
+<p>我们来看一个 Haskell 的代码.</p>
+<pre><code class="lang-haskell"><span class="hljs-title">max</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span>
+(max <span class="hljs-number">3</span>) <span class="hljs-number">4</span>
+</code></pre>
+<p>结果都是4, 这有设么用呢.</p>
+<p>这里看不出来, 放到<code>高阶函数</code>试试. 什么? 看不懂天书 Haskell, 来看看 JavaScript 吧.</p>
+<h3 id="-">我们来解一个问题</h3>
+<h4 id="1-f-1-2-12-">1. 写一个函数, 可以连接字符数组, 如 <code>f([&#39;1&#39;,&#39;2&#39;]) =&gt; &#39;12&#39;</code></h4>
+<p>好吧,如果不用柯里化, 怎么写? 啊哈 <code>reduce</code></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> concatArray = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(chars)</span>{</span>
+  <span class="hljs-keyword">return</span> chars.reduce(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(a, b)</span>{</span>
+      <span class="hljs-keyword">return</span> a.concat(b);
+  });
+}
+concat([<span class="hljs-string">'1'</span>,<span class="hljs-string">'2'</span>,<span class="hljs-string">'3'</span>]) <span class="hljs-comment">// =&gt; '123'</span>
+</code></pre>
+<p>很简单,对吧.</p>
+<h4 id="2-1-">2. 现在我要其中所有数字加1, 然后在连接</h4>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> concatArray = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(chars, inc)</span>{</span>
+  <span class="hljs-keyword">return</span> chars.map(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(char)</span>{</span>
+      <span class="hljs-keyword">return</span> (+char)+inc + <span class="hljs-string">''</span>;
+  }).reduce(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(a,b)</span>{</span>
+      <span class="hljs-keyword">return</span> a.concat(b)
+  });
+}
+console.log(concatArray([<span class="hljs-string">'1'</span>,<span class="hljs-string">'2'</span>,<span class="hljs-string">'3'</span>], <span class="hljs-number">1</span>))<span class="hljs-comment">// =&gt; '234'</span>
+</code></pre>
+<h4 id="3-2-">3. 所有数字乘以2, 再重构试试看</h4>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> multiple = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(a, b)</span>{</span>
+  <span class="hljs-keyword">return</span> +a*b + <span class="hljs-string">''</span>
+}
+<span class="hljs-keyword">var</span> concatArray = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(chars, inc)</span>{</span>
+  <span class="hljs-keyword">return</span> chars.map(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(char)</span>{</span>
+      <span class="hljs-keyword">return</span> multiple(char, inc);
+  }).reduce(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(a,b)</span>{</span>
+      <span class="hljs-keyword">return</span> a.concat(b)
+  });
+}
+console.log(concatArray([<span class="hljs-string">'1'</span>,<span class="hljs-string">'2'</span>,<span class="hljs-string">'3'</span>], <span class="hljs-number">2</span>)) <span class="hljs-comment">// =&gt; '246'</span>
+</code></pre>
+<p>是不是已经看出问题了呢? 如果我在需要每个数字都减2,是不是很麻烦呢.需要将<code>map</code> 参数匿名函数中的 multiple 函数换掉. 这样一来<code>concatArray</code>就不能同时处理加, 乘和减? 那么怎么能把他提取出来呢? 来对比下柯里化的解法.</p>
+<h3 id="-">柯里化函数接口</h3>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> multiple = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(a)</span>{</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(b)</span>{</span>
+    <span class="hljs-keyword">return</span> +b*a + <span class="hljs-string">''</span>
+  }
+}
+
+<span class="hljs-keyword">var</span> plus = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(a)</span>{</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(b)</span>{</span>
+    <span class="hljs-keyword">return</span> (+b)+a + <span class="hljs-string">''</span>
+  }
+}
+<span class="hljs-keyword">var</span> concatArray = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(chars, stylishChar)</span>{</span>
+  <span class="hljs-keyword">return</span> chars.map(stylishChar)
+    .reduce(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(a,b)</span>{</span>
+      <span class="hljs-keyword">return</span> a.concat(b)
+  });
+}
+console.log(concatArray([<span class="hljs-string">'1'</span>,<span class="hljs-string">'2'</span>,<span class="hljs-string">'3'</span>], multiple(<span class="hljs-number">2</span>)))
+console.log(concatArray([<span class="hljs-string">'1'</span>,<span class="hljs-string">'2'</span>,<span class="hljs-string">'3'</span>], plus(<span class="hljs-number">2</span>)))
+</code></pre>
+<p>有什么不一样呢</p>
+<ol>
+<li>处理数组中字符的函数被提取出来, 作为参数传入</li>
+<li>提取成柯里化的函数, 部分配置好后传入, 好处显而易见, 这下接口非常通畅
+无论是外层调用<pre><code>concatArray([&#39;1&#39;,&#39;2&#39;,&#39;3&#39;], multiple(2))
+</code></pre>还是内部的 map 函数<pre><code>chars.map(stylishChar)
+</code></pre>这些接口都清晰了很多, 不是吗</li>
+</ol>
+<p>这就是函数式的思想, 用已有的函数组合出新的函数, 而柯里化每消费一个参数, 都会返回一个新的部分配置的函数, 这为函数组合提供了更灵活的手段, 并且使得接口更为流畅.</p>
+<h3 id="-">自动柯里化</h3>
+<p>在 Haskell 语言中, 函数是会自动柯里化的:</p>
+<pre><code class="lang-haskell"><span class="hljs-title">max</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span>
+</code></pre>
+<p>其实就是</p>
+<pre><code> (max 3) 4
+</code></pre><p>可以看看<code>max</code>与<code>max 3</code>函数的 类型</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; :t max
+<span class="hljs-title">max</span> :: <span class="hljs-type">Ord</span> a =&gt; a -&gt; a -&gt; a
+</code></pre>
+<p>看明白了么, <code>Ord a =&gt;</code> 表示类型约束为可以比较大小的类型, 因此<code>max</code> 的类型可以翻译成: 当给定一个<code>a</code>, 会得到<code>a -&gt; a</code>, 再看看<code>max 3</code>的类型就好理解了</p>
+<pre><code>ghci&gt; :t max 3
+(Num a, Ord a) =&gt; a -&gt; a
+</code></pre><p>左侧表示类型约束 <code>a</code>可以是<code>Ord</code> 或者<code>Num</code>, 意思是<code>max 3</code>还是一个函数,如果给定一个<code>Ord</code>或者<code>Num</code> 类型的参数 则返回一个<code>Ord</code>或者<code>Num</code>.</p>
+<p>现在是不是清晰了, 在 Haskell 中每给定一个参数, 函数如果是多参数的, 该函数还会返回一个处理余下参数的函数. 这就是自动柯里化.</p>
+<p>而在 Javascript(以及大多数语言) 中不是的, 如果给定多参函数的部分参数, 函数会默认其他参数是<code>undefined</code>, 而不会返回处理剩余参数的函数.</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">willNotCurry</span><span class="hljs-params">(a, b, c)</span> {</span>
+    console.log(a, b, c)
+    <span class="hljs-keyword">return</span> a*b-c;
+}
+willNotCurry(<span class="hljs-number">1</span>)
+<span class="hljs-comment">// =&gt; NaN</span>
+<span class="hljs-comment">// =&gt; 1 undefined undefined</span>
+</code></pre>
+<p>如果使用自动柯里化的库 <a href="https://github.com/CrossEye/ramda" target="_blank">ramda</a>, 前面的例子简直就完美了</p>
+<pre><code>var multiple = ramda.curry(function(a, b){
+  return +b*a + &#39;&#39;
+})
+var plus = ramda.curry(function(a, b){
+  return (+b)+a + &#39;&#39;
+})
+</code></pre><p><a class="jsbin-embed" href="http://jsbin.com/hamoq/3/embed?js,console">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script></p>
+
+                    
+                    </section>
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../higher_order_function/map_reduce.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../higher_order_function/compose_function.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+        <script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
+for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f)}})(document,window.mixpanel||[]);
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/mode-javascript.js"></script>
+        <script src="../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        <script src="../gitbook/app.js"></script>
+        
+    </body>
+</html>
